@@ -61,4 +61,8 @@ class User extends Authenticatable implements HasMedia, HasAvatar
                 ?? $this->getMedia('avatar')?->first()?->getUrl('thumb')
                  ?? (new UiAvatarsProvider())->get($this);
     }
+    public function canAccessFilament(): bool
+    {
+        return $this->hasRole('super_admin') || $this->hasRole('admin');
+    }
 }
