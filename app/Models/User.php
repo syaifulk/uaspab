@@ -6,7 +6,7 @@ namespace App\Models;
 
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Models\Contracts\HasAvatar;
-use Filament\Tables\Columns\Layout\Panel;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
