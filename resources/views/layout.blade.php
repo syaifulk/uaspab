@@ -40,7 +40,7 @@
                 <nav class="list-none mb-10">
                     @foreach ($categories as $category)
                         <li>
-                            <a href="#" class="text-gray-600 hover:text-gray-800">{{ $category->name }}</a>
+                            <a class="text-gray-600 hover:text-gray-800">{{ $category->name }}</a>
                         </li>
                     @endforeach
                 </nav>
@@ -50,7 +50,7 @@
                 <nav class="list-none mb-10">
                     @foreach ($tags as $tag)
                         <li>
-                            <a href="#" class="text-gray-600 hover:text-gray-800">{{ $tag->name }}</a>
+                            <a class="text-gray-600 hover:text-gray-800">{{ $tag->name }}</a>
                         </li>
                     @endforeach
                 </nav>
