@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Models\Contracts\HasAvatar;
+use Filament\Tables\Columns\Layout\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -61,8 +62,8 @@ class User extends Authenticatable implements HasMedia, HasAvatar
                 ?? $this->getMedia('avatar')?->first()?->getUrl('thumb')
                  ?? (new UiAvatarsProvider())->get($this);
     }
-    public function canAccessFilament(): bool
+    public function canAccessPanel(Panel $panel): bool
     {
-        return $this->hasRole('super_admin') || $this->hasRole('admin');
+        return true;
     }
 }

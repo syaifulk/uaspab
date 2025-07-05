@@ -13,6 +13,7 @@
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
+        "league/flysystem-aws-s3-v3": "^3.29",
         "rupadana/filament-api-service": "^3.4"
     },
     "require-dev": {
@@ -57,11 +58,14 @@
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
         ],
-        "post-install-cmd":[
-            "@php artisan migrate --force --seed",
-            "@php artisan shield:super-admin --user=1 --panel=admin",
-            "@php artisan shield:generate --resource=RoleResource --panel=admin",
-            "@php artisan filament:optimize-clear"
+        "post-install-cmd": [
+                    "@php artisan migrate --force --seed",
+                    "@php artisan shield:super-admin --user=1 --panel=admin",
+                    "@php artisan shield:generate --resource=RoleResource --panel=admin",
+                    "@php artisan optimize:clear",
+                    "@php artisan config:cache",
+                    "@php artisan route:cache",
+                    "@php artisan view:cache"
         ]
     },
     "extra": {
