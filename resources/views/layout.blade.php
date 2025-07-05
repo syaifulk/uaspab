@@ -38,26 +38,21 @@
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">
                 <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
                 <nav class="list-none mb-10">
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Berita</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Universitas</a>
-                </li>
+                    @foreach ($categories as $category)
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-gray-800">{{ $category->name }}</a>
+                        </li>
+                    @endforeach
                 </nav>
             </div>
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">
                 <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">TAGS</h2>
                 <nav class="list-none mb-10">
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">News</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Usm</a>
-                </li>
-                <li>
-                    <a class="text-gray-600 hover:text-gray-800">Ukm</a>
-                </li>
+                    @foreach ($tags as $tag)
+                        <li>
+                            <a href="#" class="text-gray-600 hover:text-gray-800">{{ $tag->name }}</a>
+                        </li>
+                    @endforeach
                 </nav>
             </div>
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">

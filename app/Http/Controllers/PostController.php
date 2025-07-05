@@ -14,9 +14,10 @@ class PostController extends Controller
     }
     public function showArtikel()
     {
-    $post = Post::first(); // Atau find(1), atau berdasarkan slug/ID lain
-    return view('post.artikel', compact('post'));
+        $artikel = Post::where('published', 1)->latest()->get();
+        return view('post.artikel', compact('artikel'));
     }
+
     public function penulis()
     {
     $post = Post::with('media')->latest()->first(); // Post terakhir
