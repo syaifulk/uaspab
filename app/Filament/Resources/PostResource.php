@@ -68,7 +68,9 @@ class PostResource extends Resource implements HasShieldPermissions
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')->searchable(),
-                Tables\Columns\TextColumn::make('slug'),
+                Tables\Columns\TextColumn::make('slug')
+                ->limit(20)
+                ->tooltip(fn ($record) => $record->slug),
                 Tables\Columns\TextColumn::make('categories.name')
                     ->label('Categories')
                     ->badge()
