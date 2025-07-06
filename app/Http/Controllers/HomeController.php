@@ -9,8 +9,18 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $featured_post = Post::first();
-        $post_list = Post::where('published', true)->with('categories')->get();
+        // Ambil satu post terbaru sebagai featured
+        $featured_post = Post::where('published', true)->latest()->first();
+
+        // Ambil 5 post berikutnya (setelah featured)
+        $post_list = Post::where('published', true)
+            ->where('id', '!=', $featured_post->id)
+            ->latest()
+            ->skip(1)
+            ->take(3)
+            ->get();
+
+        // Kirim ke blade
         return view('home.index', compact('featured_post', 'post_list'));
     }
 }
