@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Permission;
 Route::get('/', [HomeController::class,'index']) -> name('home');
 Route::get('/post/{slug}', [PostController::class,'detail']) -> name('post.detail');
 Route::get('/artikel', [PostController::class, 'showArtikel'])->name('artikel');
+Route::get('/berita', [PostController::class, 'showBerita'])->name('berita');
 Route::get('/penulis', [PostController::class, 'penulis'])->name('penulis');
 
 

@@ -11,6 +11,8 @@
     
         <!-- Styles -->
          @vite(['resources/css/app.css', 'resources/js/app.js'])
+         <script src="https://cdn.tailwindcss.com"></script>
+
          
     </head>
     <body>
@@ -20,11 +22,12 @@
             <img src="https://placehold.co/600x400?text=News.id" width="100" height="50">
             </a>
             <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 hover:text-gray-900" href="{{ route('home') }}">Home</a>
-            <a class="mr-5 hover:text-gray-900" href="{{ route('artikel') }}">Artikel</a>
-            <a class="mr-5 hover:text-gray-900" href="{{ route('penulis') }}">Penulis</a>
+            <a class="mr-5 text-black hover:text-white hover:bg-indigo-500 px-2 py-1 rounded transition duration-300" href="{{ route('home') }}">Home</a>
+            <a class="mr-5 text-black hover:text-white hover:bg-indigo-500 px-2 py-1 rounded transition duration-300" href="{{ route('artikel') }}">Artikel</a>
+            <a class="mr-5 text-black hover:text-white hover:bg-indigo-500 px-2 py-1 rounded transition duration-300" href="{{ route('berita') }}">Berita</a>
+            <a class="mr-5 text-black hover:text-white hover:bg-indigo-500 px-2 py-1 rounded transition duration-300" href="{{ route('penulis') }}">Penulis</a>
             </nav>
-            <a href="https://uaspab-pabuas.up.railway.app/admin/login" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Login
+            <a href="https://uaspab-pabuas.up.railway.app/admin/login" class="inline-flex items-center bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-400 rounded text-white transition duration-300 mt-4 md:mt-0">Login
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
